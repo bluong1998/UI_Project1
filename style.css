@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(171,171,171);
+    font-family: Verdana, sans-serif;
+}
+#piechart {
+    float: left;
+  }
+
+  #myChart {
+    
+  }
+
+  .btn-group button {
+    background-color: #082da8d5; /* Green background */
+    border: 1px solid #082da891; /* Green border */
+    color: white; /* White text */
+    padding: 10px 10px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 25%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+    position: relative; 
+    
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: #3584fa;
+  }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>iFlowerPot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Smart Flower Pot</h1>
+    <p>Welcome!</p>
+    
+    <div id="piechart"></div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    // Load google charts
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    // Draw the chart and set the chart values
+    function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+    ['Nutrients', 'Amount'],
+    ['Nitrogen (N)', 2],
+    ['Phosphorus (P)', 2],
+    ['Potassium (K)', 2]
+    ]);
+    // Optional; add a title and set the width and height of the chart
+    var options = {'title':'Plant Stats', 'width':550, 'height':400, backgroundColor: 'transparent'};
+    // Display the chart inside the <div> element with id="piechart"
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    chart.draw(data, options);
+    }
+    </script>
+
+    <canvas id="myChart" style="width:100%;max-width:600px;height:400px"></canvas>
+    <script>
+    var xValues = ["Monday", "Tuesday", "Wedneday", "Thursday", "Friday", "Saturday", "Sunday"];
+    var yValues = [55, 49, 44, 24, 50, 54, 32];
+    var barColors = ["red", "green","blue","orange","black", "purple","yellow"];
+    new Chart("myChart", {
+    type: "bar",
+    data: {
+        labels: xValues,
+        datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+        }]
+    },
+    options: {
+        legend: {display: false},
+        title: {
+        display: true,
+        text: "Weekly Water Consumption"
+        }
+    }
+    });
+    </script>
+    
+    <div class = "btn-group">
+        <button class="button1" onclick=" window.open('myPots.html')">My Pots</button>
+        <button class="button2" onclick=" open('watererLevel.html')">Waterer Level</button>
+        <button class="button3" onclick=" open('roamMode.html')">Roam Mode</button>
+        <button class="button4" onclick=" open('schedule.html')">Schedule</button>
+        <button class="button5" onclick=" open('settings.html')">Settings</button>
+        <button class="button6" onclick=" open('settings.html')">Plant Selector</button>
+        <button class="button7" onclick=" open('settings.html')">Companion Mode</button>
+    </div>
+        
+    
+</body>
+
+
+
+
+</html>
