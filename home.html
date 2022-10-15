@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>iFlowerPot</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
     <h1>Smart Flower Pot</h1>
@@ -33,10 +37,10 @@
     }
     </script>
 
-    <canvas id="myChart" style="width:100%;max-width:600px;height:400px"></canvas>
+    <canvas id="myChart" style="width:100%;max-width:400px;height:400px"></canvas>
     <script>
     var xValues = ["Monday", "Tuesday", "Wedneday", "Thursday", "Friday", "Saturday", "Sunday"];
-    var yValues = [55, 49, 44, 24, 50, 54, 32];
+    var yValues = [9, 6, 10, 9, 7, 5, 9];
     var barColors = ["red", "green","blue","orange","black", "purple","yellow"];
     new Chart("myChart", {
     type: "bar",
@@ -57,15 +61,52 @@
     });
     </script>
     
-    <div class = "btn-group">
-        <button class="button1" onclick=" window.open('myPots.html')">My Pots</button>
-        <button class="button2" onclick=" open('watererLevel.html')">Waterer Level</button>
-        <button class="button3" onclick=" open('roamMode.html')">Roam Mode</button>
-        <button class="button4" onclick=" open('schedule.html')">Schedule</button>
-        <button class="button5" onclick=" open('settings.html')">Settings</button>
-        <button class="button6" onclick=" open('settings.html')">Plant Selector</button>
-        <button class="button7" onclick=" open('settings.html')">Companion Mode</button>
+    <div class = "container-fluid btn-group">
+        <div class= "row">
+            <div class = "col-lg-6">
+            <button class="w3-button w3-round-xlarge" onclick=" window.location.href='myPots.html'" target="_self">My Pots</button>
+            <button class="w3-button w3-round-xlarge" onclick=" window.location.href='watererLevel.html'" target="_self">Waterer Level</button>
+            <button class="w3-button w3-round-xlarge" onclick=" window.location.href='roamMode.html'" target="_self">Roam Mode</button>
+            <button class="w3-button w3-round-xlarge" onclick=" window.location.href='schedule.html'" target="_self">Schedule</button>
+            <button class="w3-button w3-round-xlarge" onclick=" window.location.href='settings.html'" target="_self">Settings</button>
+            <button class="w3-button w3-round-xlarge" onclick=" window.location.href='plantSelector.html'" target="_self">Plant Selector</button>            
+        </div>
+    <div class = "col-lg-6">
+    <div class="alert">
+        <span class="closebtn">&times;</span>  
+        <strong>Danger!</strong> Plant's Dead
+      </div>
+      
+      <div class="alert success">
+        <span class="closebtn">&times;</span>  
+        <strong>Success!</strong> The Plants are doing well
+      </div>
+      
+      <div class="alert info">
+        <span class="closebtn">&times;</span>  
+        <strong>Info</strong> bruh
+      </div>
+      
+      <div class="alert warning">
+        <span class="closebtn">&times;</span>  
+        <strong>Warning!</strong> Low water levels, refill dispensor!
     </div>
+    </div>
+    </div>
+    </div>
+      
+      <script>
+      var close = document.getElementsByClassName("closebtn");
+      var i;
+      
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function(){
+          var div = this.parentElement;
+          div.style.opacity = "0";
+          setTimeout(function(){ div.style.display = "none"; }, 600);
+        }
+      }
+      </script>
         
     
 </body>
